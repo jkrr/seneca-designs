@@ -1,0 +1,77 @@
+//Mixin
+.imageFormat {
+    border-radius: 5px;
+    border: 1px solid black;
+    margin-bottom: 20px;
+}
+//Variables
+@lightText: gold;
+@importantText: bold;
+@emergency: red;
+@emergency-light: lighten(@lightText, 20%); 
+//
+body {
+    background: lavender;
+    img {
+        .imageFormat;   
+    }
+    span {
+        color: @emergency;
+        background: @emergency-light;
+        font-weight: @importantText;
+    }
+}
+.container {
+    header {
+        background: #282947 + #111;   
+        max-width: 680px;
+        margin: auto;
+        height: 150px;
+        border: 1px solid black;
+        border-radius: 10px; 
+        h1 {
+            font-family: "georgia", sans-serif;
+            font-size: 6em;
+            color: ivory;
+            margin: 0;
+            line-height: 150px;
+        }
+    }
+    #canvases {
+    #flags {
+        margin-left: -4%;
+    }
+    #flags2 {
+        display: none; 
+        margin: auto;
+    }
+    }
+}
+//Media Queries
+@media screen and (max-width: 423px) {
+    .container {
+        header {
+            width: 300px;
+            h1 {
+                line-height: 70px;
+            }
+        }
+    }
+}
+@media screen and (max-width: 605px) {
+    .container {
+        header {  
+            h1 {
+                font-size: 4.1em;
+            }
+        }
+    }
+}
+@media screen and (max-width: 1200px) {
+    .container #canvases #flags {
+         display: none;   
+    }
+    .container #canvases #flags2 {
+        display: block;   
+    }
+}
